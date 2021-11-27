@@ -1,4 +1,4 @@
-D// This file is part of www.nand2tetris.org
+// This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/01/DMux4Way.hdl
@@ -16,5 +16,7 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // Put your code here:
+    DMux(in=in, sel=sel[1], a=aOut, b=bOut); 
+    DMux(in=aOut, sel=sel[0], a=a, b=b); 
+    DMux(in=bOut, sel=sel[0], a=c, b=d); 
 }
